@@ -5,6 +5,7 @@ import { ChevronLeft } from "lucide-react";
 
 import { likeCommunityPost } from "@/features/community/api/communityReactions.action";
 import { getOrCreateGuestIdentity } from "@/entities/user";
+import { Button } from "@/shared/ui/button";
 import { SoundLink } from "@/shared/ui/sound-link";
 
 import styles from "./CommunityQuestionDetailPage.module.css";
@@ -53,14 +54,16 @@ export default function CommunityQuestionActions({
           <ChevronLeft size={18} aria-hidden="true" />
           목록으로
         </SoundLink>
-        <button
+        <Button
+          aria-label={`따봉 ${likeCount}`}
           type="button"
           className={styles.likeButton}
           disabled={isPending}
+          loading={isPending}
           onClick={handleLike}
         >
           따봉 {likeCount}
-        </button>
+        </Button>
       </div>
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
     </>

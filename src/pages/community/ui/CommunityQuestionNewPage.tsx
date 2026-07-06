@@ -6,6 +6,7 @@ import { ChevronLeft } from "lucide-react";
 
 import { createQuestionPost } from "@/features/community/api/communityQuestions.action";
 import { getOrCreateGuestIdentity } from "@/entities/user";
+import { Button } from "@/shared/ui/button";
 import { SoundLink } from "@/shared/ui/sound-link";
 
 import styles from "./CommunityQuestionNewPage.module.css";
@@ -83,13 +84,14 @@ export default function NewQuestionPage() {
             <ChevronLeft size={18} aria-hidden="true" />
             목록으로
           </SoundLink>
-          <button
+          <Button
             type="submit"
             className={styles.submitButton}
             disabled={isPending}
+            loading={isPending}
           >
-            {isPending ? "등록 중..." : "등록"}
-          </button>
+            등록
+          </Button>
         </div>
       </form>
     </div>

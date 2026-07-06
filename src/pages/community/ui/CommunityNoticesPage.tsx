@@ -1,10 +1,4 @@
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-  Search,
-} from "lucide-react";
+import { Search } from "lucide-react";
 
 import { getCommunityPostsByBoard } from "@/features/community/api/communityPosts";
 import {
@@ -12,6 +6,8 @@ import {
   type CommunityPost,
 } from "@/entities/community";
 import { createClient } from "@/shared/lib/supabase/server";
+import { Button } from "@/shared/ui/button";
+import { Pagination } from "@/shared/ui/pagination";
 import { SoundLink } from "@/shared/ui/sound-link";
 
 import {
@@ -57,9 +53,6 @@ export default async function NoticesPage({ searchParams }: NoticesPageProps) {
     startIndex,
     startIndex + POSTS_PER_PAGE,
   );
-  const previousPage = Math.max(currentPage - 1, 1);
-  const nextPage = Math.min(currentPage + 1, totalPages);
-
   const getPageHref = (page: number) => {
     const params = new URLSearchParams();
 
@@ -84,13 +77,13 @@ export default async function NoticesPage({ searchParams }: NoticesPageProps) {
             className={styles.searchInput}
             defaultValue={rawQuery}
           />
-          <button
+          <Button
             type="submit"
             className={styles.searchButton}
             aria-label="검색"
-          >
-            <Search size={18} aria-hidden="true" />
-          </button>
+            leftIcon={<Search size={18} />}
+            variant="ghost"
+          />
         </form>
       </div>
       <div className={styles.boardList} aria-label="공지사항 목록">
@@ -133,54 +126,12 @@ export default async function NoticesPage({ searchParams }: NoticesPageProps) {
           );
         })}
       </div>
-      <nav className={styles.pagination} aria-label="공지사항 페이지">
-        <SoundLink
-          href={getPageHref(1)}
-          className={styles.pageIconButton}
-          aria-label="첫 페이지"
-        >
-          <ChevronsLeft size={18} aria-hidden="true" />
-        </SoundLink>
-        <SoundLink
-          href={getPageHref(previousPage)}
-          className={styles.pageIconButton}
-          aria-label="이전 페이지"
-        >
-          <ChevronLeft size={18} aria-hidden="true" />
-        </SoundLink>
-        {Array.from({ length: totalPages }, (_, index) => {
-          const page = index + 1;
-
-          return (
-            <SoundLink
-              key={page}
-              href={getPageHref(page)}
-              className={
-                page === currentPage
-                  ? styles.activePageButton
-                  : styles.pageButton
-              }
-              aria-current={page === currentPage ? "page" : undefined}
-            >
-              {page}
-            </SoundLink>
-          );
-        })}
-        <SoundLink
-          href={getPageHref(nextPage)}
-          className={styles.pageIconButton}
-          aria-label="다음 페이지"
-        >
-          <ChevronRight size={18} aria-hidden="true" />
-        </SoundLink>
-        <SoundLink
-          href={getPageHref(totalPages)}
-          className={styles.pageIconButton}
-          aria-label="마지막 페이지"
-        >
-          <ChevronsRight size={18} aria-hidden="true" />
-        </SoundLink>
-      </nav>
+      <Pagination
+        ariaLabel="공지사항 페이지"
+        currentPage={currentPage}
+        getPageHref={getPageHref}
+        totalPages={totalPages}
+      />
     </div>
   );
 }

@@ -11,6 +11,7 @@ import {
   type CommunityPost,
 } from "@/entities/community";
 import { getOrCreateGuestIdentity } from "@/entities/user";
+import { Button } from "@/shared/ui/button";
 import { SoundLink } from "@/shared/ui/sound-link";
 import { ggoggoSmile } from "@/assets/mascot";
 
@@ -91,9 +92,14 @@ export default function CommunityGuestbookList({
           onChange={(event) => setContent(event.target.value)}
         />
         {errorMessage && <p className={styles.formError}>{errorMessage}</p>}
-        <button type="submit" className={styles.button} disabled={isPending}>
-          {isPending ? "등록 중..." : "등록"}
-        </button>
+        <Button
+          type="submit"
+          className={styles.button}
+          disabled={isPending}
+          loading={isPending}
+        >
+          등록
+        </Button>
       </form>
       <hr className={styles.divider} />
       <div className={styles.commentList}>
@@ -138,14 +144,15 @@ export default function CommunityGuestbookList({
         ))}
       </div>
       {hasMoreEntries && (
-        <button
+        <Button
           type="button"
           className={styles.loadMoreButton}
           onClick={handleLoadMore}
+          rightIcon={<ChevronDown size={18} />}
+          variant="secondary"
         >
           더보기
-          <ChevronDown size={18} aria-hidden="true" />
-        </button>
+        </Button>
       )}
     </>
   );

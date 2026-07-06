@@ -7,6 +7,7 @@ import { useMemo, useState, useTransition, type FormEvent } from "react";
 import { createCommunityComment } from "@/features/community/api/communityComments.action";
 import type { CommunityComment } from "@/entities/community";
 import { getOrCreateGuestIdentity } from "@/entities/user";
+import { Button } from "@/shared/ui/button";
 import { SoundLink } from "@/shared/ui/sound-link";
 import { ggoggoSmile } from "@/assets/mascot";
 
@@ -124,9 +125,14 @@ export default function CommunityQuestionComments({
           onChange={(event) => setContent(event.target.value)}
         />
         {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
-        <button type="submit" className={styles.submitButton} disabled={isPending}>
-          {isPending ? "등록 중..." : "등록"}
-        </button>
+        <Button
+          type="submit"
+          className={styles.submitButton}
+          disabled={isPending}
+          loading={isPending}
+        >
+          등록
+        </Button>
       </form>
     </>
   );
