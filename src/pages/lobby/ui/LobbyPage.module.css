@@ -78,18 +78,6 @@
   grid-column: span 1;
 }
 
-.backgroundPrimaryStrong {
-  background-color: var(--primary-strong);
-}
-
-.backgroundPrimaryPale {
-  background-color: var(--primary-pale);
-}
-
-.backgroundSecondaryPale {
-  background-color: var(--secondary-pale);
-}
-
 .desktopOnly {
   display: none;
 }

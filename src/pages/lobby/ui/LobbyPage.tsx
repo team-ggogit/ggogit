@@ -516,7 +516,8 @@ export default async function LobbyPage() {
         <Card
           id="continue-card"
           title="이어하기"
-          className={`${styles.span4} ${styles.backgroundPrimaryStrong}`}
+          tone="primaryStrong"
+          className={styles.span4}
         >
           <ContinueCardContent
             chapterNumber={continueStage.chapterNumber}
@@ -531,7 +532,8 @@ export default async function LobbyPage() {
         <Card
           id="streak-card"
           title="연속 학습"
-          className={`${styles.span2} ${styles.backgroundPrimaryPale} ${styles.desktopOnly}`}
+          tone="primaryPale"
+          className={`${styles.span2} ${styles.desktopOnly}`}
         >
           <StreakCardContent
             currentStreakDays={activityStats.currentStreakDays}
@@ -542,7 +544,8 @@ export default async function LobbyPage() {
         <Card
           id="today-summary-card"
           title="학습 요약"
-          className={`${styles.span2} ${styles.backgroundSecondaryPale} ${styles.desktopOnly}`}
+          tone="secondaryPale"
+          className={`${styles.span2} ${styles.desktopOnly}`}
         >
           <TodaySummaryContent
             challengeCompleted={learningSummary.challengeCompleted}
@@ -554,7 +557,8 @@ export default async function LobbyPage() {
           id="daily-quest-card"
           title="데일리 퀘스트"
           headerAction={<a href="#">13:45 남음</a>}
-          className={`${styles.span3} ${styles.backgroundPrimaryPale} `}
+          tone="primaryPale"
+          className={styles.span3}
         >
           <DailyQuestContent
             isAuthenticated={dailyQuestSummary.isAuthenticated}
@@ -564,14 +568,16 @@ export default async function LobbyPage() {
         <Card
           id="learning-route-card"
           title="추천 학습 루트"
-          className={`${styles.span3} ${styles.backgroundPrimaryPale} ${styles.desktopOnly}`}
+          tone="primaryPale"
+          className={`${styles.span3} ${styles.desktopOnly}`}
         >
           <LearningRouteContent />
         </Card>
         <Card
           id="recent-badge-card"
           title="최근 획득 배지"
-          className={`${styles.span2} ${styles.backgroundPrimaryPale} ${styles.desktopOnly}`}
+          tone="primaryPale"
+          className={`${styles.span2} ${styles.desktopOnly}`}
         >
           <RecentBadgeContent badge={latestBadge} />
         </Card>
@@ -581,14 +587,16 @@ export default async function LobbyPage() {
           headerAction={
             <SoundLink href="/community/questions">더 보기</SoundLink>
           }
-          className={`${styles.span4} ${styles.backgroundPrimaryPale} ${styles.desktopOnly}`}
+          tone="primaryPale"
+          className={`${styles.span4} ${styles.desktopOnly}`}
         >
           <CommunityContent questions={popularQuestions} />
         </Card>
         <Card
           id="daily-tip-card"
           title="오늘의 팁"
-          className={`${styles.span4} ${styles.backgroundPrimaryPale} `}
+          tone="primaryPale"
+          className={styles.span4}
         >
           <DailyTipContent tip={dailyTip} />
         </Card>

@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+  margin-top: var(--space-5);
+}
+
+.pageButton,
+.activePageButton,
+.pageIconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-height-sm);
+  height: var(--control-height-sm);
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: var(--font-character), var(--font-sans), sans-serif;
+  font-size: var(--text-label-md-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-label-md-line-height);
+  text-decoration: none;
+}
+
+.activePageButton {
+  background-color: var(--primary-base);
+}
+
+.pageIconButton {
+  color: var(--text-secondary);
+}
