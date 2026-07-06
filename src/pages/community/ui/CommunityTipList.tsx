@@ -7,6 +7,7 @@ import {
   getCommunityFirstParagraph,
   type CommunityPost,
 } from "@/entities/community";
+import { Button } from "@/shared/ui/button";
 
 import styles from "./CommunityTipsPage.module.css";
 
@@ -50,16 +51,16 @@ export default function CommunityTipList({ tips }: CommunityTipListProps) {
     <>
       <div className={styles.tagFilter} aria-label="팁 태그 필터">
         {TIP_TAGS.map((tag) => (
-          <button
+          <Button
             key={tag}
             type="button"
-            className={
-              tag === selectedTag ? styles.activeTagButton : styles.tagButton
-            }
+            className={styles.tagButton}
             onClick={() => handleSelectTag(tag)}
+            selected={tag === selectedTag}
+            size="sm"
           >
             #{tag}
-          </button>
+          </Button>
         ))}
       </div>
       <hr className={styles.divider} />
@@ -82,14 +83,15 @@ export default function CommunityTipList({ tips }: CommunityTipListProps) {
         ))}
       </div>
       {hasMoreTips && (
-        <button
+        <Button
           type="button"
           className={styles.loadMoreButton}
           onClick={handleLoadMore}
+          rightIcon={<ChevronDown size={18} />}
+          variant="secondary"
         >
           더보기
-          <ChevronDown size={18} aria-hidden="true" />
-        </button>
+        </Button>
       )}
     </>
   );

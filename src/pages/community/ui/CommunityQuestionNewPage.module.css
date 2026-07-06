@@ -8,40 +8,48 @@
 .titleRow {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 .titleRow > h1 {
-  font-size: clamp(18px, 6vw, 24px);
+  font-size: clamp(
+    var(--text-heading-sm-font-size),
+    6vw,
+    var(--text-heading-lg-font-size)
+  );
+  font-weight: var(--text-heading-lg-font-weight);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 .formCard {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: clamp(16px, 4vw, 24px);
+  gap: var(--gap-lg);
+  padding: clamp(var(--padding-lg), 4vw, var(--padding-2xl));
   border: 3px solid var(--primary-base);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background-color: var(--surface);
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-weight: bold;
+  gap: var(--gap-xs);
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: var(--padding-md) var(--padding-lg);
   border: 2px solid var(--primary-base);
-  border-radius: 10px;
-  background-color: white;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
   font: inherit;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: var(--text-body-md-line-height);
 }
 
 .input:focus,
@@ -58,36 +66,32 @@
 .actions {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--gap-sm);
 }
 
-.cancelButton,
-.submitButton {
+.cancelButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 1;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 8px;
-  color: black;
+  min-height: var(--control-height-md);
+  gap: var(--gap-2xs);
+  padding: var(--padding-sm) var(--padding-lg);
+  border: 1px solid var(--secondary-soft);
+  border-radius: var(--radius-md);
+  background-color: var(--secondary-pale);
+  color: var(--secondary-deep);
   cursor: pointer;
-  font: inherit;
-  font-weight: bold;
-}
-
-.cancelButton {
-  gap: 2px;
-  background-color: var(--border);
   text-decoration: none;
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
 }
 
 .submitButton {
-  background-color: var(--primary-base);
+  flex: 1;
 }
 
-.submitButton:disabled,
 .input:disabled,
 .textarea:disabled {
   cursor: not-allowed;
@@ -96,7 +100,7 @@
 
 .errorMessage {
   margin: 0;
-  color: var(--danger, #d33);
-  font-size: 13px;
-  line-height: 1.4;
+  color: var(--danger-strong);
+  font-size: var(--text-caption-lg-font-size);
+  line-height: var(--text-caption-lg-line-height);
 }

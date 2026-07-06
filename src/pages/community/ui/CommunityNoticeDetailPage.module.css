@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--gap-md);
   width: 100%;
   font-family: var(--font-character);
 }
@@ -9,43 +9,51 @@
 .noticeCard {
   overflow: hidden;
   border: 3px solid var(--primary-base);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background-color: var(--surface);
 }
 
 .noticeHeader {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: clamp(16px, 4vw, 24px) clamp(16px, 4vw, 28px) 0;
+  gap: var(--gap-xs);
+  padding: clamp(var(--padding-lg), 4vw, var(--padding-2xl))
+    clamp(var(--padding-lg), 4vw, var(--padding-3xl)) 0;
 }
 
 .noticeLabel {
   width: fit-content;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: var(--padding-xs) var(--padding-md);
+  border-radius: var(--radius-full);
   background-color: var(--primary-soft);
   color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: bold;
+  font-size: var(--text-caption-lg-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-caption-lg-line-height);
 }
 
 .noticeHeader h1 {
-  font-size: clamp(20px, 6vw, 30px);
-  line-height: 1.25;
+  font-size: clamp(
+    var(--text-heading-md-font-size),
+    6vw,
+    var(--text-display-md-font-size)
+  );
+  font-weight: var(--text-display-md-font-weight);
+  line-height: var(--text-display-md-line-height);
 }
 
 .noticeMeta {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: var(--text-body-sm-font-size);
+  line-height: var(--text-body-sm-line-height);
 }
 
 .noticeContent {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: clamp(18px, 4vw, 28px);
-  line-height: 1.7;
+  gap: var(--gap-sm);
+  padding: clamp(var(--padding-xl), 4vw, var(--padding-3xl));
+  line-height: var(--text-body-lg-line-height);
 }
 
 .contentImage {
@@ -66,15 +74,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: var(--gap-2xs);
   width: fit-content;
-  min-height: 42px;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background-color: var(--border);
-  color: black;
+  min-height: var(--control-height-md);
+  padding: var(--padding-sm) var(--padding-lg);
+  border: 1px solid var(--secondary-soft);
+  border-radius: var(--radius-md);
+  background-color: var(--secondary-pale);
+  color: var(--secondary-deep);
   text-decoration: none;
-  font-weight: bold;
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
 }
 
 @media (max-width: 767px) {
