@@ -146,13 +146,13 @@ export default function AppShell({
           <div className={styles.statusContainer}>
             <div className={styles.status}>
               <div className={styles.streakStatus}>
-                <Flame size={24} fill="lightcoral" />
+                <Flame size={24} aria-hidden="true" />
                 <span className={styles.streakText}>
                   {displayCurrentUser.currentStreakDays}
                 </span>
               </div>
               <div className={styles.beanStatus}>
-                <Bean size={24} fill="lightgreen" />
+                <Bean size={24} aria-hidden="true" />
                 <span className={styles.beanText}>
                   {displayCurrentUser.currentBeans}
                 </span>

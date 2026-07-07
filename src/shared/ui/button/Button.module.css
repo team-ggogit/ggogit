@@ -6,7 +6,7 @@
   border: 1px solid var(--button-border);
   background: var(--button-bg);
   color: var(--button-color);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--button-font-family, var(--font-sans)), sans-serif;
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -47,30 +47,30 @@
 }
 
 .sm {
-  height: var(--control-height-sm);
-  gap: var(--gap-2xs);
-  padding-inline: var(--padding-md);
-  border-radius: var(--radius-sm);
+  height: var(--button-height, var(--control-height-sm));
+  gap: var(--button-gap, var(--gap-2xs));
+  padding-inline: var(--button-padding-inline, var(--padding-md));
+  border-radius: var(--button-radius, var(--radius-sm));
   font-size: var(--text-label-md-font-size);
   font-weight: var(--text-label-md-font-weight);
   line-height: var(--text-label-md-line-height);
 }
 
 .md {
-  height: var(--control-height-md);
-  gap: var(--gap-xs);
-  padding-inline: var(--padding-lg);
-  border-radius: var(--radius-md);
+  height: var(--button-height, var(--control-height-md));
+  gap: var(--button-gap, var(--gap-xs));
+  padding-inline: var(--button-padding-inline, var(--padding-lg));
+  border-radius: var(--button-radius, var(--radius-md));
   font-size: var(--text-label-lg-font-size);
   font-weight: var(--text-label-lg-font-weight);
   line-height: var(--text-label-lg-line-height);
 }
 
 .lg {
-  height: var(--control-height-lg);
-  gap: var(--gap-xs);
-  padding-inline: var(--padding-xl);
-  border-radius: var(--radius-lg);
+  height: var(--button-height, var(--control-height-lg));
+  gap: var(--button-gap, var(--gap-xs));
+  padding-inline: var(--button-padding-inline, var(--padding-xl));
+  border-radius: var(--button-radius, var(--radius-lg));
   font-size: var(--text-body-lg-font-size);
   font-weight: var(--text-body-lg-font-weight);
   line-height: var(--text-body-lg-line-height);
