@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--gap-xs);
   height: 100%;
   flex: 1;
 
-  font-size: 18px;
+  font-size: var(--text-body-lg-font-size);
+  line-height: var(--text-body-lg-line-height);
   color: var(--text-secondary);
   text-align: center;
 }
@@ -27,25 +28,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: var(--gap-2xs);
 }
 
 .badgeText strong {
   color: var(--text-primary);
-  font-size: 19px;
-  line-height: 1.25;
+  font-size: var(--text-heading-sm-font-size);
+  line-height: var(--text-heading-sm-line-height);
 }
 
 .badgeText span,
 .badgeText time {
   color: var(--text-secondary);
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: var(--text-caption-lg-font-size);
+  line-height: var(--text-caption-lg-line-height);
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .recentBadgeContent {
-    font-size: clamp(14px, 1.1vw, 18px);
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .badgeImage {
@@ -54,7 +56,8 @@
   }
 
   .badgeText strong {
-    font-size: clamp(15px, 1.4vw, 19px);
+    font-size: var(--text-heading-xs-font-size);
+    line-height: var(--text-heading-xs-line-height);
   }
 }
 

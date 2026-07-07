@@ -7,6 +7,7 @@ import StageStartModal from "@/features/study-quiz/ui/StageStartModal";
 import type { MiniQuizStage } from "@/entities/mini-quiz";
 import { playClickSound } from "@/shared/lib/sound/soundPlayer";
 import { useSoundStore } from "@/shared/model/sound/soundStore";
+import { Button } from "@/shared/ui/button";
 import { ggoggoWalk } from "@/assets/mascot";
 
 import styles from "./ContinueCardContent.module.css";
@@ -69,13 +70,13 @@ export default function ContinueCardContent({
               </div>
               <span className={styles.progressText}>{totalProgressText}</span>
             </div>
-            <button
-              type="button"
+            <Button
               className={styles.continueButton}
               onClick={openStartModal}
+              size="lg"
             >
               이어하기
-            </button>
+            </Button>
           </div>
         </div>
         <Image

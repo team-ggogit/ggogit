@@ -1,7 +1,7 @@
 .streakCard {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-lg);
   flex: 1;
 }
 
@@ -9,7 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: var(--text-heading-md-font-size);
+  line-height: var(--text-heading-md-line-height);
 }
 
 .streakInfo {
@@ -22,20 +23,23 @@
 .streakCountContainer {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--gap-2xs);
 
-  font-size: 20px;
+  font-size: var(--text-heading-md-font-size);
+  line-height: var(--text-heading-md-line-height);
 }
 
 .streakCount {
   display: flex;
   align-items: flex-end;
-  font-size: 36px;
-  font-weight: bold;
+  font-size: var(--text-display-lg-font-size);
+  font-weight: var(--text-display-lg-font-weight);
+  line-height: var(--text-display-lg-line-height);
 }
 
 .streakMessage {
-  font-size: 20px;
+  font-size: var(--text-heading-md-font-size);
+  line-height: var(--text-heading-md-line-height);
 }
 
 .streakCardContent img {
@@ -52,7 +56,7 @@
 .streakFooter {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+  gap: var(--gap-xs);
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -61,7 +65,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: var(--gap-xs);
   min-width: 0;
 }
 
@@ -71,7 +75,7 @@
   place-items: center;
   width: 30px;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .flameImage {
@@ -83,12 +87,12 @@
 
 .missed,
 .upcoming {
-  background-color: #e8e8e8;
+  background-color: color-mix(in srgb, var(--border) 72%, var(--surface));
 }
 
 .completed,
 .today {
-  background-color: #ffa2a2;
+  background-color: var(--danger-base);
 }
 
 .completed .flameImage {
@@ -100,16 +104,18 @@
 }
 
 .dayLabel {
-  font-size: 24px;
+  font-size: var(--text-heading-lg-font-size);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .streakCard {
-    gap: clamp(10px, 1vw, 14px);
+    gap: var(--gap-sm);
   }
 
   .streakCardContent {
-    font-size: 18px;
+    font-size: var(--text-heading-sm-font-size);
+    line-height: var(--text-heading-sm-line-height);
   }
 
   .streakInfo {
@@ -126,11 +132,11 @@
   }
 
   .streakFooter {
-    gap: clamp(2px, 0.35vw, 4px);
+    gap: var(--gap-2xs);
   }
 
   .dayItem {
-    gap: clamp(4px, 0.45vw, 6px);
+    gap: var(--gap-2xs);
   }
 
   .dayCircle {
@@ -143,6 +149,7 @@
   }
 
   .dayLabel {
-    font-size: clamp(12px, 1.1vw, 16px);
+    font-size: var(--text-label-sm-font-size);
+    line-height: var(--text-label-sm-line-height);
   }
 }
