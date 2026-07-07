@@ -1,7 +1,7 @@
 .challengePage {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: var(--gap-sm);
   font-family: var(--font-character);
 }
 
@@ -9,77 +9,82 @@
 .rankingPanel {
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
 }
 
 .challengeIntro {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 22px;
+  gap: var(--gap-lg);
+  padding: var(--padding-xl);
   background: var(--primary-pale);
 }
 
 .eyebrow {
   color: var(--text-secondary);
   font-family: var(--font-code);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--text-code-md-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-code-md-line-height);
 }
 
 .introText {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-xs);
 }
 
 .introText h1 {
-  font-size: 42px;
-  line-height: 1.12;
+  font-size: var(--text-display-xl-font-size);
+  font-weight: var(--text-display-xl-font-weight);
+  line-height: var(--text-display-xl-line-height);
 }
 
 .introText p,
 .todayTopic p {
   color: var(--text-secondary);
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: var(--text-body-lg-font-size);
+  font-weight: var(--text-body-lg-font-weight);
+  line-height: var(--text-body-lg-line-height);
 }
 
 .todayTopic {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 16px;
+  gap: var(--gap-2xs);
+  padding: var(--padding-lg);
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
 }
 
 .todayTopic span {
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: var(--text-caption-lg-font-size);
+  line-height: var(--text-caption-lg-line-height);
 }
 
 .todayTopic strong {
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: var(--text-heading-lg-font-size);
+  font-weight: var(--text-heading-lg-font-weight);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 .ruleGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: var(--gap-xs);
 }
 
 .ruleCard {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 2px 10px;
+  gap: 2px var(--gap-xs);
   align-items: center;
-  padding: 14px;
+  padding: var(--padding-md);
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
 }
 
 .ruleCard svg {
@@ -89,23 +94,26 @@
 
 .ruleCard span {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: var(--text-label-md-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-label-md-line-height);
 }
 
 .ruleCard strong {
-  font-size: 18px;
-  line-height: 1.2;
+  font-size: var(--text-heading-sm-font-size);
+  font-weight: var(--text-heading-sm-font-weight);
+  line-height: var(--text-heading-sm-line-height);
 }
 
 .recordNotice {
   display: flex;
-  gap: 10px;
+  gap: var(--gap-xs);
   align-items: flex-start;
-  padding: 13px 14px;
+  padding: var(--padding-md);
   color: var(--text-secondary);
   background: rgb(255 255 255 / 72%);
   border: 2px dashed var(--primary-deep);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
 }
 
 .recordNotice svg {
@@ -115,42 +123,40 @@
 }
 
 .recordNotice p {
-  font-size: 16px;
-  line-height: 1.45;
+  font-size: var(--text-body-md-font-size);
+  font-weight: var(--text-body-md-font-weight);
+  line-height: var(--text-body-md-line-height);
 }
 
 .startButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
-  color: var(--text-primary);
-  background: var(--primary-strong);
-  border: 2px solid var(--primary-deep);
-  border-radius: 999px;
-  cursor: pointer;
-  font: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  transition: transform 120ms ease;
-}
+  --button-bg: var(--primary-strong);
+  --button-border: var(--primary-deep);
+  --button-hover-bg: var(--primary-base);
+  --button-hover-border: var(--primary-deep);
+  --button-selected-bg: var(--primary-strong);
+  --button-selected-border: var(--primary-deep);
+  --button-focus-bg: var(--primary-strong);
+  --button-focus-border: var(--primary-deep);
+  --button-font-family: var(--font-character);
+  --button-padding-inline: 22px;
+  --button-radius: var(--radius-full);
 
-.startButton:active {
-  transform: scale(0.97);
+  width: fit-content;
+  border-width: 2px;
+  font-weight: 700;
 }
 
 .rankingPanel {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 18px;
+  gap: var(--gap-md);
+  padding: var(--padding-xl);
 }
 
 .startModalContent {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--gap-sm);
   text-align: center;
 }
 
@@ -164,60 +170,77 @@
 
 .startModalContent p {
   color: var(--text-secondary);
-  font-size: 17px;
-  line-height: 1.45;
+  font-size: var(--text-body-md-font-size);
+  font-weight: var(--text-body-md-font-weight);
+  line-height: var(--text-body-md-line-height);
 }
 
 .startModalActions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: var(--gap-xs);
 }
 
 .startModalGhostButton,
 .startModalStartButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  font: inherit;
-  font-size: 16px;
+  --button-font-family: var(--font-character);
+  --button-height: var(--control-height-lg);
+  --button-padding-inline: 18px;
+  --button-radius: var(--radius-full);
+
   font-weight: 700;
   white-space: nowrap;
-  transition: transform 120ms ease;
 }
 
 .startModalGhostButton {
-  color: var(--text-secondary);
-  background: var(--surface);
-  border: 2px solid var(--border);
-  cursor: pointer;
+  --button-color: var(--text-secondary);
+  --button-bg: var(--surface);
+  --button-border: var(--border);
+  --button-hover-color: var(--text-primary);
+  --button-hover-bg: var(--primary-pale);
+  --button-hover-border: var(--border);
+  --button-selected-color: var(--text-primary);
+  --button-selected-bg: var(--primary-soft);
+  --button-selected-border: var(--primary-deep);
+  --button-focus-color: var(--text-primary);
+  --button-focus-bg: var(--surface);
+  --button-focus-border: var(--primary-deep);
+
+  border-width: 2px;
 }
 
 .startModalStartButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--control-height-lg);
+  padding-inline: 18px;
   color: var(--text-primary);
   background: var(--primary-strong);
   border: 2px solid var(--primary-deep);
+  border-radius: var(--radius-full);
+  font-size: var(--text-label-lg-font-size);
+  font-weight: 700;
+  line-height: var(--text-label-lg-line-height);
+  transition: background-color 120ms ease, border-color 120ms ease;
 }
 
-.startModalGhostButton:active,
-.startModalStartButton:active {
-  transform: scale(0.97);
+.startModalStartButton:hover {
+  background: var(--primary-base);
 }
 
 .rankingHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--gap-sm);
 }
 
 .rankingHeader h2 {
-  margin-top: 4px;
-  font-size: 30px;
-  line-height: 1.15;
+  margin-top: var(--space-1);
+  font-size: var(--text-heading-xl-font-size);
+  font-weight: var(--text-heading-xl-font-weight);
+  line-height: var(--text-heading-xl-line-height);
 }
 
 .rankingHeader svg {
@@ -241,20 +264,20 @@
 .rankingList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-xs);
   list-style: none;
 }
 
 .rankingItem {
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr) auto auto auto;
-  gap: 8px;
+  gap: var(--gap-xs);
   align-items: center;
   min-width: 0;
-  padding: 10px 12px;
+  padding: var(--padding-sm) var(--padding-md);
   background: var(--primary-pale);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
 }
 
 .rankNumber {
@@ -265,16 +288,19 @@
   height: 28px;
   background: var(--primary-strong);
   border: 2px solid var(--primary-deep);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   font-family: var(--font-code);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--text-code-md-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-code-md-line-height);
 }
 
 .rankingItem strong {
   overflow: hidden;
   min-width: 0;
-  font-size: 17px;
+  font-size: var(--text-heading-xs-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-heading-xs-line-height);
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -282,23 +308,25 @@
 .rankingItem span:not(.rankNumber),
 .rankingItem em {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: var(--text-body-sm-font-size);
+  font-weight: var(--text-body-sm-font-weight);
+  line-height: var(--text-body-sm-line-height);
   font-style: normal;
   white-space: nowrap;
 }
 
 .rankingItem em {
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: var(--text-heading-xs-font-weight);
 }
 
 .rankingItem[data-empty="true"] {
   color: var(--text-secondary);
-  background: #f7f7f7;
+  background: var(--surface);
 }
 
 .rankingItem[data-empty="true"] .rankNumber {
-  background: #eeeeee;
+  background: var(--border);
   border-color: var(--border);
 }
 
@@ -309,11 +337,11 @@
 .myRecord {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px;
+  gap: var(--gap-xs);
+  padding: var(--padding-md);
   background: var(--secondary-pale);
   border: 2px solid var(--secondary-soft);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
 }
 
 .myRecord svg {
@@ -324,43 +352,49 @@
 
 .myRecord span {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: var(--text-label-md-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-label-md-line-height);
 }
 
 .myRecord strong {
   display: block;
-  margin-top: 2px;
-  font-size: 17px;
-  line-height: 1.25;
+  margin-top: var(--space-1);
+  font-size: var(--text-heading-xs-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-heading-xs-line-height);
 }
 
 @media (max-width: 420px) {
   .challengeIntro,
   .rankingPanel {
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
   }
 
   .challengeIntro {
-    gap: 14px;
-    padding: 18px;
+    gap: var(--gap-sm);
+    padding: var(--padding-lg);
   }
 
   .introText h1 {
-    font-size: 34px;
+    font-size: var(--text-display-md-font-size);
+    line-height: var(--text-display-md-line-height);
   }
 
   .introText p,
   .todayTopic p {
-    font-size: 16px;
+    font-size: var(--text-body-md-font-size);
+    line-height: var(--text-body-md-line-height);
   }
 
   .recordNotice p {
-    font-size: 14px;
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .ruleGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .ruleCard {
@@ -368,16 +402,18 @@
     flex-direction: column;
     justify-content: center;
     min-height: 104px;
-    padding: 10px 6px;
+    padding: var(--padding-sm) var(--padding-xs);
     text-align: center;
   }
 
   .ruleCard span {
-    font-size: 12px;
+    font-size: var(--text-label-sm-font-size);
+    line-height: var(--text-label-sm-line-height);
   }
 
   .ruleCard strong {
-    font-size: 14px;
+    font-size: var(--text-label-md-font-size);
+    line-height: var(--text-label-md-line-height);
   }
 
   .startButton {
@@ -409,17 +445,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .startButton {
-    transition: none;
-  }
-
-  .startButton:active,
-  .startModalGhostButton:active,
-  .startModalStartButton:active {
-    transform: none;
-  }
-
-  .startModalGhostButton,
   .startModalStartButton {
     transition: none;
   }
@@ -436,15 +461,16 @@
 @media (min-width: 1024px) {
   .challengePage {
     grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
-    gap: 18px;
+    gap: var(--gap-lg);
   }
 
   .challengeIntro,
   .rankingPanel {
-    padding: 24px;
+    padding: var(--padding-2xl);
   }
 
   .introText h1 {
     font-size: 56px;
+    line-height: 64px;
   }
 }

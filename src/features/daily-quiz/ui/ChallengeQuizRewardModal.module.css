@@ -55,10 +55,10 @@
   position: absolute;
   display: grid;
   place-items: center;
-  color: #6c9f3d;
-  background: #dff7a8;
-  border: 2px solid #7aa842;
-  border-radius: 999px;
+  color: var(--reward-bean-deep);
+  background: var(--reward-bean-soft);
+  border: 2px solid var(--reward-bean-border);
+  border-radius: var(--radius-full);
   box-shadow: 0 5px 8px rgb(0 0 0 / 12%);
 }
 
@@ -104,7 +104,7 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  color: var(--primary-deep);
+  color: var(--reward-bean-text);
   font-size: 34px;
   line-height: 1.1;
 }
@@ -114,5 +114,5 @@
 }
 
 .rewardModalContent[data-kind="streak"] .rewardText strong {
-  color: #e46f19;
+  color: var(--warning);
 }

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { playClickSound } from "@/shared/lib/sound/soundPlayer";
 import { useSoundStore } from "@/shared/model/sound/soundStore";
+import { Button } from "@/shared/ui/button";
 import { Modal } from "@/shared/ui/modal";
 import { SoundLink } from "@/shared/ui/sound-link";
 import { ggoggoPodium } from "@/assets/mascot";
@@ -22,13 +23,13 @@ export default function ChallengeStartControl() {
 
   return (
     <>
-      <button
-        type="button"
+      <Button
         className={styles.startButton}
         onClick={openStartModal}
+        size="lg"
       >
         도전 시작하기
-      </button>
+      </Button>
 
       {isOpen && (
         <Modal title="오늘의 도전을 시작할까요?" onClose={() => setIsOpen(false)}>
@@ -44,13 +45,13 @@ export default function ChallengeStartControl() {
               시작해요.
             </p>
             <div className={styles.startModalActions}>
-              <button
-                type="button"
+              <Button
                 className={styles.startModalGhostButton}
                 onClick={() => setIsOpen(false)}
+                variant="secondary"
               >
                 닫기
-              </button>
+              </Button>
               <SoundLink
                 href="/challenge/play"
                 className={styles.startModalStartButton}
