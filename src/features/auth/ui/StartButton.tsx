@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, type ReactNode } from "react";
 
+import { Button } from "@/shared/ui/button";
 import { Modal } from "@/shared/ui/modal";
 import { ggoggoGreet } from "@/assets/mascot";
 
@@ -27,13 +28,14 @@ export default function StartButton({
 
   return (
     <>
-      <button
+      <Button
         type="button"
         className={`${styles.startButton} ${styles[variant]}`}
         onClick={() => setIsModalOpen(!isModalOpen)}
+        size={variant === "hero" ? "lg" : "md"}
       >
         {children}
-      </button>
+      </Button>
 
       {isModalOpen && (
         <Modal title={modalTitle} onClose={() => setIsModalOpen(false)}>

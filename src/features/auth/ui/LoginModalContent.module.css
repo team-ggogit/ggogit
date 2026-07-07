@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--gap-md);
   margin: 6px 0;
   width: min(100%, 320px);
 }
@@ -11,9 +11,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 48px;
+  height: var(--control-height-lg);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background-color: #fee500;
   color: rgba(0, 0, 0, 0.85);
   font-family:
@@ -22,8 +22,8 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  font-size: 16px;
-  gap: 8px;
+  font-size: var(--text-body-md-font-size);
+  gap: var(--gap-xs);
   cursor: pointer;
 }
 
@@ -32,19 +32,19 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 48px;
+  height: var(--control-height-lg);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background-color: #24292f;
-  color: #ffffff;
+  color: var(--text-inverse);
   font-family:
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  font-size: 16px;
-  gap: 8px;
+  font-size: var(--text-body-md-font-size);
+  gap: var(--gap-xs);
   cursor: pointer;
 }
 
@@ -63,14 +63,14 @@
 .divider {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-xs);
   margin: 10px 0;
 }
 
 .divider hr {
   flex: 1;
   border: none;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid var(--border);
 }
 
 .divider span {
@@ -83,8 +83,8 @@
 
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  color: #555555;
+  font-size: var(--text-body-md-font-size);
+  color: var(--text-secondary);
   cursor: pointer;
 }
 
