@@ -13,6 +13,12 @@ interface ModalProps {
 }
 
 export default function Modal({ title, onClose, children }: ModalProps) {
+  const portalRoot = typeof document === "undefined" ? null : document.body;
+
+  if (!portalRoot) {
+    return null;
+  }
+
   return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div
@@ -36,6 +42,6 @@ export default function Modal({ title, onClose, children }: ModalProps) {
         <div className={styles.body}>{children}</div>
       </div>
     </div>,
-    document.body,
+    portalRoot,
   );
 }

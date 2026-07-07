@@ -40,6 +40,13 @@
   --error: #EF4444;
   --info: #3B82F6;
 
+  /* Reward */
+  --reward-bean-deep: #6C9F3D;
+  --reward-bean-base: #80DD68;
+  --reward-bean-soft: #DFF7A8;
+  --reward-bean-border: #7AA842;
+  --reward-bean-text: #2F7D32;
+
   /* Typography */
   --text-display-xl-font-size: 40px;
   --text-display-xl-line-height: 48px;
