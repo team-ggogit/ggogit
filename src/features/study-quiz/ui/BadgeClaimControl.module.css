@@ -4,14 +4,14 @@
 
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--gap-sm);
 
   min-width: 0;
-  padding: 12px;
+  padding: var(--padding-md);
 
   background: var(--chapter-soft);
   border: 2px dashed color-mix(in srgb, var(--chapter-color) 38%, transparent);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
 }
 
 .rewardPreview[data-claimable="true"]::after {
@@ -34,7 +34,7 @@
 
   color: var(--chapter-color);
   background: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .rewardBadge {
@@ -57,39 +57,40 @@
 
 .rewardPreview p {
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: var(--text-caption-lg-font-size);
+  line-height: var(--text-caption-lg-line-height);
 }
 
 .rewardPreview strong {
   display: block;
   color: var(--chapter-color);
-  font-size: 17px;
-  line-height: 1.25;
+  font-size: var(--text-heading-xs-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-heading-xs-line-height);
 }
 
 .claimButton {
+  --button-bg: var(--primary-strong);
+  --button-border: var(--primary-deep);
+  --button-hover-bg: var(--primary-base);
+  --button-hover-border: var(--primary-deep);
+  --button-selected-bg: var(--primary-strong);
+  --button-selected-border: var(--primary-deep);
+  --button-focus-bg: var(--primary-strong);
+  --button-focus-border: var(--primary-deep);
+  --button-font-family: var(--font-character);
+  --button-height: 42px;
+  --button-padding-inline: 22px;
+  --button-radius: var(--radius-full);
+
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 6;
   transform: translate(-50%, -50%);
 
-  min-height: 42px;
-  padding: 0 22px;
-
-  color: var(--text-primary);
-  background: var(--primary-strong);
-  border: 2px solid var(--primary-deep);
-  border-radius: 999px;
-  cursor: pointer;
-  font: inherit;
-  font-size: 16px;
+  border-width: 2px;
   white-space: nowrap;
-  transition: transform 120ms ease;
-}
-
-.claimButton:not(:disabled):active {
-  transform: translate(-50%, -50%) scale(0.97);
 }
 
 .claimButton:disabled {
@@ -97,25 +98,16 @@
   opacity: 0.76;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .claimButton {
-    transition: none;
-  }
-
-  .claimButton:not(:disabled):active {
-    transform: translate(-50%, -50%);
-  }
-}
-
 .claimError {
   position: absolute;
-  right: 10px;
-  bottom: 8px;
-  left: 10px;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  left: var(--space-2);
   z-index: 7;
 
-  color: var(--error-text, #b42318);
-  font-size: 12px;
+  color: var(--danger-deep);
+  font-size: var(--text-caption-md-font-size);
+  line-height: var(--text-caption-md-line-height);
   text-align: center;
 }
 
@@ -123,7 +115,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: var(--gap-sm);
   text-align: center;
 }
 
@@ -136,14 +128,16 @@
 
 .badgeModalContent p {
   color: var(--text-secondary);
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: var(--text-body-lg-font-size);
+  font-weight: var(--text-body-lg-font-weight);
+  line-height: var(--text-body-lg-line-height);
 }
 
 .beanReward {
-  color: var(--primary-deep);
-  font-size: 24px;
-  line-height: 1.2;
+  color: var(--reward-bean-text);
+  font-size: var(--text-heading-lg-font-size);
+  font-weight: var(--text-heading-lg-font-weight);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 @media (min-width: 768px) {
@@ -180,6 +174,7 @@
   }
 
   .rewardPreview strong {
-    font-size: clamp(14px, 1.15vw, 17px);
+    font-size: var(--text-label-lg-font-size);
+    line-height: var(--text-label-lg-line-height);
   }
 }
