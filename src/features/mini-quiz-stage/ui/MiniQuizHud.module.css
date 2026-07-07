@@ -1,7 +1,7 @@
 .quizHud {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--gap-sm);
 }
 
 .energyMeter {
@@ -25,7 +25,7 @@
   overflow: hidden;
   background: var(--primary-pale);
   border: 2px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
 }
 
 .timerFill {
@@ -40,24 +40,25 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  gap: 5px;
+  gap: var(--gap-2xs);
 
   min-width: 72px;
-  min-height: 36px;
-  padding: 0 10px;
+  min-height: var(--control-height-sm);
+  padding: 0 var(--padding-md);
 
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--text-label-md-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-label-md-line-height);
 }
 
 @media (max-width: 767px) {
   .quizHud {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .energyMeter svg {
@@ -67,8 +68,7 @@
 
   .timeChip {
     min-width: 64px;
-    min-height: 32px;
-    font-size: 14px;
+    min-height: var(--control-height-sm);
   }
 
   .timerTrack {

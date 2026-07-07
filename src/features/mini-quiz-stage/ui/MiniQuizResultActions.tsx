@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AuthRequiredModal } from "@/features/auth";
 import { useCurrentUserStore } from "@/entities/user";
 import { trackEvent } from "@/shared/lib/analytics";
+import { Button } from "@/shared/ui/button";
 import { SoundLink } from "@/shared/ui/sound-link";
 
 import { useMiniQuizStageContext } from "./MiniQuizStageProvider";
@@ -29,14 +30,15 @@ export default function MiniQuizResultActions() {
   return (
     <>
       <div className={styles.resultActions}>
-        <button
-          type="button"
+        <Button
           className={styles.secondaryButton}
+          leftIcon={<RotateCcw size={18} />}
           onClick={retry}
+          size="lg"
+          variant="secondary"
         >
-          <RotateCcw size={18} aria-hidden="true" />
           다시 풀기
-        </button>
+        </Button>
         <SoundLink href="/study" className={styles.primaryLink}>
           스테이지 선택으로
         </SoundLink>
