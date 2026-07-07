@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useCurrentUserStore } from "@/entities/user";
 import { playSuccessSound } from "@/shared/lib/sound/soundPlayer";
 import { useSoundStore } from "@/shared/model/sound/soundStore";
+import { Button } from "@/shared/ui/button";
 import { Modal } from "@/shared/ui/modal";
 import {
   stage1Badge,
@@ -109,14 +110,13 @@ export default function BadgeClaimControl({
           <strong>{badgeName}</strong>
         </div>
         {isClaimable && (
-          <button
-            type="button"
+          <Button
             className={styles.claimButton}
             disabled={isPending}
             onClick={handleClaimBadge}
           >
             {isPending ? "수령 중" : "수령하기"}
-          </button>
+          </Button>
         )}
         {claimError && <p className={styles.claimError}>{claimError}</p>}
       </aside>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import type { MiniQuizStage } from "@/entities/mini-quiz";
+import { Button } from "@/shared/ui/button";
 import { Modal } from "@/shared/ui/modal";
 import { SoundLink } from "@/shared/ui/sound-link";
 import { ggoggoAdventure } from "@/assets/mascot";
@@ -74,13 +75,13 @@ export default function StageStartModal({
             : "준비되면 바로 시작해요."}
         </p>
         <div className={styles.stageModalActions}>
-          <button
-            type="button"
+          <Button
             className={styles.stageModalGhostButton}
             onClick={onClose}
+            variant="secondary"
           >
             닫기
-          </button>
+          </Button>
           {!isLocked && (
             <SoundLink
               className={styles.stageModalStartButton}
