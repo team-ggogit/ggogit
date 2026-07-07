@@ -13,20 +13,21 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px;
+  gap: var(--gap-xs);
 
   min-height: 100%;
   max-width: 62%;
 }
 
 .dailyTipContent h3 {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: var(--text-heading-lg-font-size);
+  font-weight: var(--text-body-md-font-weight);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 .dailyTipContent p {
-  font-size: 18px;
-  line-height: 1.35;
+  font-size: var(--text-body-lg-font-size);
+  line-height: var(--text-body-lg-line-height);
   word-break: keep-all;
 }
 
@@ -35,16 +36,18 @@
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  padding: 0 24px;
+  padding: 0 var(--padding-2xl);
 
   border: none;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   background-color: var(--primary-strong);
   color: var(--text-primary);
   cursor: pointer;
 
   font: inherit;
-  font-size: 18px;
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
   text-decoration: none;
 }
 

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: var(--gap-lg);
 
   flex: 1;
 }
@@ -11,7 +11,7 @@
 .dailyQuestList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-xs);
 
   flex: 1;
   width: 100%;
@@ -24,26 +24,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 12px;
+  padding: var(--padding-sm) var(--padding-md);
 
   flex: 1;
 
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
 
   background-color: var(--surface);
 }
 
 .dailyQuestItem[data-status="completed"] {
-  outline: 2px solid rgb(128 221 104 / 55%);
+  outline: 2px solid color-mix(in srgb, var(--reward-bean-base) 55%, transparent);
+}
+
+.dailyQuestItem[data-status="inProgress"] .statusIcon {
+  color: var(--text-muted);
+}
+
+.dailyQuestItem:not([data-status="inProgress"]) .statusIcon {
+  color: var(--success);
+}
+
+.rewardIcon {
+  color: var(--reward-bean-deep);
+  fill: var(--reward-bean-base);
 }
 
 .questContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--gap-sm);
 
-  padding: 0 12px;
+  padding: 0 var(--padding-md);
   flex: 1;
 }
 
@@ -55,7 +68,7 @@
 .rewardContainer {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--gap-2xs);
 
   white-space: nowrap;
 }
@@ -69,9 +82,10 @@
   justify-content: center;
 
   background-color: rgb(0 0 0 / 55%);
-  color: var(--surface);
-  font-size: 18px;
-  font-weight: 700;
+  color: var(--text-inverse);
+  font-size: var(--text-heading-sm-font-size);
+  font-weight: var(--text-heading-sm-font-weight);
+  line-height: var(--text-heading-sm-line-height);
 }
 
 .receiveForm {
@@ -79,85 +93,66 @@
 }
 
 .receiveButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --button-bg: var(--primary-strong);
+  --button-border: var(--primary-strong);
+  --button-hover-bg: var(--primary-base);
+  --button-hover-border: var(--primary-deep);
+  --button-selected-bg: var(--primary-strong);
+  --button-selected-border: var(--primary-deep);
+  --button-focus-bg: var(--primary-strong);
+  --button-focus-border: var(--primary-deep);
+  --button-font-family: var(--font-character);
+  --button-radius: var(--radius-lg);
 
-  gap: 10px;
-  background-color: var(--primary-strong);
-  border: none;
   width: 100%;
-
-  padding: 10px 20px;
-  border-radius: 20px;
-
-  font-size: 18px;
-  cursor: pointer;
-  transition: transform 120ms ease;
-}
-
-.receiveButton:not(:disabled):active {
-  transform: scale(0.98);
-}
-
-.receiveButton:disabled {
-  background-color: rgb(0 0 0 / 12%);
-  color: rgb(0 0 0 / 45%);
-  cursor: not-allowed;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .receiveButton {
-    transition: none;
-  }
-
-  .receiveButton:not(:disabled):active {
-    transform: none;
-  }
+  border-width: 2px;
+  font-weight: 700;
 }
 
 .claimMessage {
   width: 100%;
-  margin: -8px 0 0;
-  color: #b42318;
-  font-size: 13px;
-  line-height: 1.35;
+  margin: calc(var(--space-2) * -1) 0 0;
+  color: var(--danger-deep);
+  font-size: var(--text-caption-lg-font-size);
+  line-height: var(--text-caption-lg-line-height);
   text-align: center;
 }
 
 .claimMessage[data-success="true"] {
-  color: #2f7d32;
+  color: var(--reward-bean-text);
 }
 
 .beanContainer {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--gap-2xs);
 
-  color: #2f7d32;
+  color: var(--reward-bean-text);
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .dailyQuestCard {
-    gap: 16px;
+    gap: var(--gap-md);
   }
 
   .dailyQuestItem {
-    padding: 8px 10px;
+    padding: var(--padding-sm) var(--padding-md);
   }
 
   .questContainer {
-    gap: 8px;
-    padding: 0 8px;
+    gap: var(--gap-xs);
+    padding: 0 var(--padding-sm);
   }
 
   .questContent {
-    font-size: clamp(13px, 1.1vw, 16px);
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .progress,
   .rewardContainer {
-    font-size: clamp(14px, 1.15vw, 18px);
+    font-size: var(--text-label-md-font-size);
+    line-height: var(--text-label-md-line-height);
   }
 
   .rewardContainer svg {
@@ -165,7 +160,4 @@
     height: 14px;
   }
 
-  .receiveButton {
-    font-size: clamp(18px, 1.4vw, 22px);
-  }
 }

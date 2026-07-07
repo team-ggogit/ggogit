@@ -12,6 +12,7 @@ import type { DailyQuest } from "@/entities/daily-quest";
 import { trackEvent } from "@/shared/lib/analytics";
 import { playSuccessSound } from "@/shared/lib/sound/soundPlayer";
 import { useSoundStore } from "@/shared/model/sound/soundStore";
+import { Button } from "@/shared/ui/button";
 
 import styles from "./DailyQuestContent.module.css";
 
@@ -78,7 +79,8 @@ export default function DailyQuestContent({
             >
               <StatusIcon
                 size={20}
-                color={isInProgress ? "gray" : "#4CAF50"}
+                className={styles.statusIcon}
+                aria-hidden="true"
               />
               <div className={styles.questContainer}>
                 <p className={styles.questContent}>{quest.title}</p>
@@ -87,7 +89,11 @@ export default function DailyQuestContent({
                 </p>
               </div>
               <div className={styles.rewardContainer}>
-                <BeanIcon size={16} fill="#80DD68" />
+                <BeanIcon
+                  size={16}
+                  className={styles.rewardIcon}
+                  aria-hidden="true"
+                />
                 <span>+{quest.reward}</span>
               </div>
               {quest.status === "claimed" && (
@@ -110,9 +116,13 @@ export default function DailyQuestContent({
           setIsAuthModalOpen(true);
         }}
       >
-        <button className={styles.receiveButton} disabled={isClaimDisabled}>
+        <Button
+          className={styles.receiveButton}
+          disabled={isClaimDisabled}
+          type="submit"
+        >
           <span>{buttonLabel}</span>
-        </button>
+        </Button>
       </form>
       {claimState.message && (
         <p className={styles.claimMessage} data-success={claimState.success}>
