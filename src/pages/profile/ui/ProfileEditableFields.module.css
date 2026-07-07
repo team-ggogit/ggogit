@@ -2,29 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-top: 4px;
-  margin-bottom: 12px;
+  gap: var(--gap-sm);
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-3);
 }
 
 .titleRow > h1 {
-  font-size: clamp(22px, 6vw, 24px);
+  font-size: clamp(
+    var(--text-heading-md-font-size),
+    6vw,
+    var(--text-heading-lg-font-size)
+  );
+  font-weight: var(--text-heading-lg-font-weight);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 .editButton {
-  min-height: 34px;
-  padding: 5px 12px;
-  border: 2px solid var(--primary-base);
-  border-radius: 10px;
-  background-color: var(--primary-base);
-  color: var(--text-primary);
-  cursor: pointer;
-  font: inherit;
-  font-weight: bold;
+  --button-font-family: var(--font-character);
+  --button-radius: var(--radius-full);
 }
 
-.editButton:disabled,
-.button:disabled,
 .input:disabled,
 .textarea:disabled {
   cursor: not-allowed;
@@ -35,29 +32,29 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 4vw, 18px);
-  padding: clamp(14px, 4vw, 18px);
+  gap: clamp(var(--gap-sm), 4vw, var(--gap-lg));
+  padding: clamp(var(--padding-lg), 4vw, var(--padding-xl));
   border: 2px solid var(--primary-base);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background-color: var(--primary-soft);
 }
 
 .form {
-  gap: clamp(14px, 4vw, 18px);
+  gap: clamp(var(--gap-sm), 4vw, var(--gap-lg));
 }
 
 .profileRow {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
-  gap: clamp(12px, 4vw, 18px);
+  gap: clamp(var(--gap-sm), 4vw, var(--gap-lg));
 }
 
 .field {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  gap: 8px;
+  gap: var(--gap-xs);
 }
 
 .form .field {
@@ -66,25 +63,30 @@
 
 .label {
   text-align: start;
-  font-size: clamp(24px, 6vw, 28px);
-  font-weight: bold;
+  font-size: clamp(
+    var(--text-heading-lg-font-size),
+    6vw,
+    var(--text-heading-xl-font-size)
+  );
+  font-weight: var(--text-heading-xl-font-weight);
+  line-height: var(--text-heading-xl-line-height);
 }
 
 .form .label {
-  line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-1);
+  line-height: var(--text-heading-lg-line-height);
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: var(--padding-md) var(--padding-lg);
   border: 3px solid var(--primary-base);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background-color: var(--surface);
   color: var(--text-primary);
   font: inherit;
-  line-height: 1.5;
+  line-height: var(--text-body-md-line-height);
 }
 
 .input {
@@ -93,7 +95,7 @@
 
 .form .input {
   min-height: 44px;
-  padding: 8px 12px;
+  padding: var(--padding-sm) var(--padding-md);
 }
 
 .textarea {
@@ -109,8 +111,8 @@
   height: clamp(72px, 20vw, 84px);
   padding: 0;
   border: none;
-  border-radius: 50%;
-  background-color: lightgray;
+  border-radius: var(--radius-full);
+  background-color: var(--border);
   color: var(--text-primary);
   cursor: pointer;
   overflow: hidden;
@@ -137,21 +139,21 @@
   place-items: center;
   width: clamp(72px, 20vw, 84px);
   height: clamp(72px, 20vw, 84px);
-  border-radius: 50%;
-  background-color: lightgray;
+  border-radius: var(--radius-full);
+  background-color: var(--border);
   color: var(--text-primary);
   overflow: hidden;
 }
 
 .avatarImage {
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
 }
 
 .avatarEditIcon {
   position: absolute;
   z-index: 2;
-  color: white;
+  color: var(--text-inverse);
   opacity: 0;
   pointer-events: none;
   transition: opacity 160ms ease;
@@ -172,16 +174,17 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  gap: 10px;
+  gap: var(--gap-xs);
 }
 
 .profileName {
-  font-size: 18px;
+  font-size: var(--text-heading-sm-font-size);
+  line-height: var(--text-heading-sm-line-height);
 }
 
 .bioText {
-  padding: 2px 0 0;
-  line-height: 1.45;
+  padding: var(--space-1) 0 0;
+  line-height: var(--text-body-md-line-height);
 }
 
 .tableWrap {
@@ -190,7 +193,7 @@
   min-width: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
 }
 
 .statTable {
@@ -198,7 +201,7 @@
   table-layout: fixed;
   border-collapse: collapse;
   border: 2px solid var(--primary-base);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background-color: var(--surface);
   font-size: 10px;
   text-align: center;
@@ -207,48 +210,41 @@
 .statTable th,
 .statTable td {
   width: 33.333%;
-  padding: 7px 4px;
+  padding: var(--padding-sm) var(--padding-xs);
   border: 1px solid var(--primary-base);
   word-break: keep-all;
 }
 
 .statTable th {
   background-color: var(--primary-base);
-  font-weight: bold;
+  font-weight: var(--text-label-md-font-weight);
 }
 
 .button {
   width: 100%;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 2px solid var(--primary-strong);
-  border-radius: 10px;
-  background-color: var(--primary-base);
-  color: black;
-  cursor: pointer;
-  font: inherit;
-  font-weight: bold;
+  --button-font-family: var(--font-character);
 }
 
 .errorMessage {
-  color: var(--danger, #c0392b);
-  font-size: 14px;
-  font-weight: bold;
+  color: var(--danger-strong);
+  font-size: var(--text-label-md-font-size);
+  font-weight: var(--text-label-md-font-weight);
+  line-height: var(--text-label-md-line-height);
 }
 
 .certificate {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-top: 14px;
+  gap: var(--gap-sm);
+  padding-top: var(--padding-lg);
   border-top: 1px solid var(--primary-base);
 }
 
 .certificateText {
   text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.55;
+  font-size: var(--text-heading-md-font-size);
+  font-weight: var(--text-heading-md-font-weight);
+  line-height: var(--text-heading-md-line-height);
 }
 
 .certificateFooter {
@@ -263,8 +259,9 @@
 
 .joinedAt {
   text-align: center;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
 }
 
 .sealImage {
@@ -284,12 +281,12 @@
 @media (min-width: 768px) {
   .profileCard,
   .form {
-    gap: 24px;
-    padding: 28px;
+    gap: var(--gap-xl);
+    padding: var(--padding-3xl);
   }
 
   .profileRow {
-    gap: 16px;
+    gap: var(--gap-md);
   }
 
   .avatarButton {
@@ -305,36 +302,39 @@
   .profileSummary,
   .bioSection,
   .statsSection {
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .profileName {
-    font-size: 20px;
+    font-size: var(--text-heading-md-font-size);
+    line-height: var(--text-heading-md-line-height);
   }
 
   .statTable {
     min-width: 420px;
-    font-size: 14px;
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .statTable th,
   .statTable td {
-    padding: 10px 8px;
+    padding: var(--padding-sm) var(--padding-xs);
     white-space: nowrap;
   }
 
   .certificate {
-    gap: 16px;
-    padding-top: 18px;
+    gap: var(--gap-md);
+    padding-top: var(--padding-xl);
   }
 
   .certificateText {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: var(--text-heading-md-font-size);
+    font-weight: var(--text-heading-md-font-weight);
   }
 
   .joinedAt {
-    font-size: 18px;
+    font-size: var(--text-heading-sm-font-size);
+    line-height: var(--text-heading-sm-line-height);
   }
 
   .sealImage {

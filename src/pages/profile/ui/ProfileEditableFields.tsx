@@ -9,6 +9,7 @@ import type { UserProfile } from "@/entities/profile";
 import { useCurrentUserStore } from "@/entities/user";
 import { playSuccessSound } from "@/shared/lib/sound/soundPlayer";
 import { useSoundStore } from "@/shared/model/sound/soundStore";
+import { Button } from "@/shared/ui/button";
 import { ggoggoSeal, ggoggoSmile } from "@/assets/mascot";
 
 import styles from "./ProfileEditableFields.module.css";
@@ -93,14 +94,16 @@ export default function ProfileEditableFields({
       <div className={styles.titleRow}>
         <h1>{canEdit ? "내 정보" : "프로필"}</h1>
         {canEdit ? (
-          <button
+          <Button
             type="button"
             className={styles.editButton}
             disabled={isSavingProfile || isSavingAvatar}
             onClick={() => setIsEditing((current) => !current)}
+            size="sm"
+            variant="secondary"
           >
             {isEditing ? "취소" : "수정"}
-          </button>
+          </Button>
         ) : null}
       </div>
 
@@ -162,13 +165,14 @@ export default function ProfileEditableFields({
               {errorMessage}
             </p>
           ) : null}
-          <button
+          <Button
             type="submit"
             className={styles.button}
             disabled={isSavingProfile || isSavingAvatar}
+            loading={isSavingProfile}
           >
-            {isSavingProfile ? "저장 중" : "저장"}
-          </button>
+            저장
+          </Button>
         </form>
       ) : (
         <section className={styles.profileCard} aria-label="프로필 정보">
