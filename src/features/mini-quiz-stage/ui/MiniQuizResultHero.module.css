@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: var(--gap-lg);
   min-width: 0;
-  padding: 20px;
+  padding: var(--padding-xl);
   background: var(--primary-pale);
   border: 2px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
 }
 
 .resultText {
@@ -17,20 +17,23 @@
 .eyebrow {
   color: var(--text-secondary);
   font-family: var(--font-code);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: var(--text-code-sm-font-size);
+  font-weight: var(--text-heading-xs-font-weight);
+  line-height: var(--text-code-sm-line-height);
 }
 
 .resultText h1 {
-  margin-top: 6px;
-  font-size: 36px;
-  line-height: 1.15;
+  margin-top: var(--space-2);
+  font-size: var(--text-display-lg-font-size);
+  font-weight: var(--text-display-lg-font-weight);
+  line-height: var(--text-display-lg-line-height);
 }
 
 .resultText p {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: var(--text-body-lg-font-size);
+  line-height: var(--text-body-lg-line-height);
 }
 
 .resultMascot {
@@ -48,11 +51,12 @@
 
 @media (max-width: 767px) {
   .resultHero {
-    padding: 16px;
+    padding: var(--padding-lg);
   }
 
   .resultText h1 {
-    font-size: 24px;
+    font-size: var(--text-heading-lg-font-size);
+    line-height: var(--text-heading-lg-line-height);
   }
 
   .resultMascot {
@@ -62,6 +66,7 @@
 
 @media (min-width: 1024px) {
   .resultText h1 {
-    font-size: 46px;
+    font-size: var(--text-display-xl-font-size);
+    line-height: var(--text-display-xl-line-height);
   }
 }

@@ -1,61 +1,48 @@
 .resultActions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: var(--gap-xs);
 }
 
-.secondaryButton,
-.primaryButton,
+.secondaryButton {
+  --button-color: var(--text-secondary);
+  --button-bg: var(--surface);
+  --button-border: var(--border);
+  --button-hover-color: var(--text-primary);
+  --button-hover-bg: var(--primary-pale);
+  --button-hover-border: var(--border);
+  --button-selected-color: var(--text-primary);
+  --button-selected-bg: var(--primary-soft);
+  --button-selected-border: var(--primary-deep);
+  --button-focus-color: var(--text-primary);
+  --button-focus-bg: var(--surface);
+  --button-focus-border: var(--primary-deep);
+  --button-font-family: var(--font-character);
+  --button-radius: var(--radius-full);
+
+  border-width: 2px;
+  font-weight: 700;
+}
+
 .primaryLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  min-height: var(--control-height-lg);
+  padding-inline: 18px;
 
-  min-height: 44px;
-  padding: 0 18px;
-
-  border-radius: 999px;
-  font: inherit;
-  font-size: 17px;
-  transition: transform 120ms ease;
-}
-
-.secondaryButton:active,
-.primaryButton:active,
-.primaryLink:active {
-  transform: scale(0.97);
-}
-
-.primaryButton,
-.primaryLink {
   color: var(--text-primary);
   background: var(--primary-strong);
   border: 2px solid var(--primary-deep);
+  border-radius: var(--radius-full);
+  font-size: var(--text-label-lg-font-size);
+  font-weight: 700;
+  line-height: var(--text-label-lg-line-height);
+  transition: background-color 120ms ease, border-color 120ms ease;
 }
 
-.secondaryButton {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  cursor: pointer;
-}
-
-.primaryButton {
-  cursor: pointer;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .secondaryButton,
-  .primaryButton,
-  .primaryLink {
-    transition: none;
-  }
-
-  .secondaryButton:active,
-  .primaryButton:active,
-  .primaryLink:active {
-    transform: none;
-  }
+.primaryLink:hover {
+  background: var(--primary-base);
 }
 
 @media (max-width: 767px) {
@@ -64,10 +51,13 @@
   }
 
   .secondaryButton,
-  .primaryButton,
   .primaryLink {
     width: 100%;
-    min-height: 42px;
-    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryLink {
+    transition: none;
   }
 }

@@ -1,23 +1,24 @@
 .questionBody {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 14px;
+  gap: var(--gap-sm);
   align-items: center;
   min-height: 190px;
-  padding: 16px;
+  padding: var(--padding-lg);
   background: var(--primary-pale);
   border: 2px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
 }
 
 .questionDescription {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--gap-xs);
   min-width: 0;
   color: var(--text-secondary);
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: var(--text-body-lg-font-size);
+  font-weight: var(--text-body-lg-font-weight);
+  line-height: var(--text-body-lg-line-height);
 }
 
 .questionDescription svg {
@@ -34,14 +35,14 @@
 @media (max-width: 767px) {
   .questionBody {
     min-height: auto;
-    padding: 10px 12px;
-    border-radius: 14px;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--radius-sm);
   }
 
   .questionDescription {
     align-items: center;
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .questionDescription svg {
@@ -57,6 +58,6 @@
 @media (min-width: 768px) {
   .questionBody {
     grid-template-columns: minmax(0, 1fr) minmax(190px, 260px);
-    padding: 20px 24px;
+    padding: var(--padding-xl) var(--padding-2xl);
   }
 }

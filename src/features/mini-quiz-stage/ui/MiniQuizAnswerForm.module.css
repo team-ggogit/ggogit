@@ -1,24 +1,25 @@
 .optionGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: var(--gap-xs);
 }
 
 .optionButton {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--gap-xs);
 
   min-height: 58px;
-  padding: 12px 14px;
+  padding: var(--padding-md);
 
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   cursor: pointer;
   font: inherit;
-  font-size: 17px;
+  font-size: var(--text-body-md-font-size);
+  line-height: var(--text-body-md-line-height);
   text-align: left;
 }
 
@@ -42,15 +43,15 @@
 }
 
 .optionButton[data-status="correct"] {
-  background: #f0fdf4;
+  background: color-mix(in srgb, var(--success) 10%, var(--surface));
   border-color: var(--success);
   color: var(--success);
 }
 
 .optionButton[data-status="wrong"] {
-  background: #fef2f2;
-  border-color: var(--error);
-  color: var(--error);
+  background: var(--danger-pale);
+  border-color: var(--danger-strong);
+  color: var(--danger-strong);
 }
 
 .optionButton[data-status="idle"] .optionIcon {
@@ -69,27 +70,29 @@
 .commandAnswer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-xs);
 }
 
 .commandAnswer span {
   color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--text-label-lg-font-size);
+  font-weight: var(--text-label-lg-font-weight);
+  line-height: var(--text-label-lg-line-height);
 }
 
 .commandAnswer input {
   width: 100%;
   min-height: 58px;
-  padding: 0 16px;
+  padding: 0 var(--padding-lg);
 
   color: var(--text-primary);
   background: var(--surface);
   border: 2px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   font: inherit;
   font-family: var(--font-code);
-  font-size: 18px;
+  font-size: var(--text-code-lg-font-size);
+  line-height: var(--text-code-lg-line-height);
 }
 
 .commandAnswer input:focus {
@@ -99,19 +102,21 @@
 
 @media (max-width: 767px) {
   .optionGrid {
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .optionButton {
     min-height: 52px;
-    padding: 10px 12px;
-    border-radius: 14px;
-    font-size: 15px;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
   }
 
   .commandAnswer input {
     min-height: 52px;
-    font-size: 16px;
+    font-size: var(--text-code-md-font-size);
+    line-height: var(--text-code-md-line-height);
   }
 }
 

@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: var(--gap-sm);
 
-  padding: 6px 4px 2px;
+  padding: var(--padding-sm) var(--padding-xs) var(--padding-xs);
   text-align: center;
 }
 
@@ -25,7 +25,7 @@
 
   background: var(--primary-pale);
   border: 2px solid var(--border);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .mascotImage,
@@ -66,10 +66,10 @@
   display: grid;
   place-items: center;
 
-  color: #6c9f3d;
-  background: #dff7a8;
-  border: 2px solid #7aa842;
-  border-radius: 999px;
+  color: var(--reward-bean-deep);
+  background: var(--reward-bean-soft);
+  border: 2px solid var(--reward-bean-border);
+  border-radius: var(--radius-full);
   box-shadow: 0 5px 8px rgb(0 0 0 / 12%);
 }
 
@@ -101,24 +101,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: var(--gap-2xs);
 }
 
 .rewardText p {
   color: var(--text-secondary);
-  font-size: 17px;
-  line-height: 1.4;
+  font-size: var(--text-body-md-font-size);
+  line-height: var(--text-body-md-line-height);
 }
 
 .rewardText strong {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: var(--gap-xs);
 
-  color: var(--primary-deep);
-  font-size: 34px;
-  line-height: 1.1;
+  color: var(--reward-bean-text);
+  font-size: var(--text-display-md-font-size);
+  font-weight: var(--text-display-md-font-weight);
+  line-height: var(--text-display-md-line-height);
 }
 
 .rewardModalContent[data-kind="streak"] .visualStage::before {
@@ -126,5 +127,5 @@
 }
 
 .rewardModalContent[data-kind="streak"] .rewardText strong {
-  color: #e46f19;
+  color: var(--warning);
 }
