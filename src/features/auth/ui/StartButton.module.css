@@ -1,30 +1,21 @@
 .startButton {
-  border: none;
-  border-radius: 999px;
-  background-color: var(--primary-base);
-  color: var(--text-primary);
-  font: inherit;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
+  --button-font-family: var(--font-character);
+  --button-radius: var(--radius-full);
 }
 
 .header {
   min-width: 64px;
-  padding: 10px 20px;
-  line-height: 1.2;
 }
 
 .hero {
-  margin: 30px 0 0;
-  padding: 10px 20px;
+  margin: var(--space-8) 0 0;
 }
 
 .modalContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--gap-md);
   text-align: center;
 }
 
@@ -38,13 +29,19 @@
   margin: 0;
   max-width: 360px;
   color: var(--text-secondary);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--text-body-md-font-size);
+  line-height: var(--text-body-md-line-height);
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: clamp(10px, 1.2vw, 14px) clamp(20px, 3vw, 36px);
-    font-size: clamp(16px, 1.5vw, 20px);
+    --button-padding-inline: clamp(
+      var(--padding-xl),
+      3vw,
+      var(--padding-3xl)
+    );
+
+    font-size: var(--text-heading-md-font-size);
+    line-height: var(--text-heading-md-line-height);
   }
 }
