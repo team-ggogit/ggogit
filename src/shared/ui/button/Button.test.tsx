@@ -13,9 +13,6 @@ describe("Button", () => {
   it("leftIcon을 주면 렌더된다", () => {
     render(<Button leftIcon={<span>아이콘</span>}>확인</Button>);
     expect(screen.getByText("아이콘")).toBeInTheDocument();
-
-    //   const { container } = render(<Button leftIcon={<LensConcaveIcon />}>확인</Button>);
-    //   expect(container.querySelector("svg")).toBeInTheDocument();
   });
 
   it("loading이면 스피너가 뜬다", () => {

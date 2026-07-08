@@ -5,8 +5,6 @@ import type { ReactNode } from "react";
 
 import ChallengeQuizQuestionPanel from "./ChallengeQuizQuestionPanel";
 
-// vi.mock은 파일 위로 끌어올려지므로, mock이 참조할 값도 vi.hoisted로 함께 올린다.
-// holder.value를 테스트마다 바꿔 context를 갈아끼운다.
 const { holder } = vi.hoisted(() => ({ holder: { value: null as unknown } }));
 
 vi.mock("./ChallengeQuizProvider", () => ({
