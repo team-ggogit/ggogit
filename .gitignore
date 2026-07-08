@@ -34,3 +34,9 @@ supabase/*
 
 # Local quiz content data
 src/features/study-quiz/mock/miniQuizData.ts
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
