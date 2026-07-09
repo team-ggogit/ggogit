@@ -26,7 +26,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
-  reporter: "list",
+  reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: {
     // route-151 등이 :3000을 쓰므로 E2E는 전용 포트 :3100에 띄운다.
     baseURL: "http://localhost:3100",
