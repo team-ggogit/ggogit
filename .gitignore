@@ -26,6 +26,7 @@ out
 *.sw?
 
 .env
+.env.e2e
 next-env.d.ts
 tsconfig.tsbuildinfo
 
